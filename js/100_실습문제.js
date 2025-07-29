@@ -78,7 +78,7 @@ $(document).ready(function () {
   $("#p10-animateBtn").click(function () {
     // HINT: .animate() 메서드를 사용하세요.
     // 첫 번째 인자로 { width: "300px", opacity: 0.5 } 형태의 CSS 객체를,
-    // TODO 두 번째 인자로 시간(1500)을 전달합니다.
+    // 두 번째 인자로 시간(1500)을 전달합니다.
     $("#p10-myBox").animate({ width: "300px", opacity: 0.5 }, 1500);
   });
 });
