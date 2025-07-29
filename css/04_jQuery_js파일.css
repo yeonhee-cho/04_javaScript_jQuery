@@ -1,0 +1,39 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  padding: 10px;
+  cursor: pointer;
+}
+.active {
+  background-color: navy;
+  color: white;
+}
+
+form {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+form input {
+  padding: 8px;
+}
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
