@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax GET을 이용한 도서검색</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/13_Ajax_GET_도서검색.css" />
+    <link rel="icon" type="image/png" href="../img/pumkin.png" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📚 도서 검색 시스템</h1>
+      <form>
+        <label>
+          도서명 :
+          <input type="text" id="bookTitle" placeholder="도서명을 입력하세요" />
+        </label>
+        <label>
+          저자 :
+          <input type="text" id="author" placeholder="저자를 입력하세요" />
+        </label>
+        <div class="button-group">
+          <button type="button" id="도서검색">도서 검색</button>
+          <button type="button" id="검색초기화">검색 초기화</button>
+        </div>
+      </form>
+      <div id="result">도서명과 저자를 입력하고 검색 버튼을 클릭하세요!</div>
+    </div>
+
+    <script src="../js/13_Ajax_GET_도서검색.js"></script>
+  </body>
+</html>
