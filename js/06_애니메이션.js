@@ -36,7 +36,7 @@ $(function () {
     $(this).addClass("active");
     // 모든 .tab-content를 slideUP하고, 해당 탭만 slideDown
     // 메서드  .slideUp()  .slideDown() 기본 속도 400ms
-    $(".tab-content").slideUp(50);
-    $("#" + targetTab).slideUp(50);
+    $(".tab-content").slideUp();
+    $("#" + targetTab).slideDown();
   });
 });
