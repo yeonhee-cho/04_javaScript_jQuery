@@ -69,15 +69,35 @@ $(function () {
     $(this).toggleClass("flipped");
   });
 
-  /* 애니메이션 드롭다운 메뉴 */
+  /* 5. 애니메이션 드롭다운 메뉴 */
+  /* 
+    .hover() : 마우스가 요소로 다가왔을 때 메서드(행동 = 기능)
+    .active() : 마우스로 요소를 선택했을 때 메서드(행동 = 기능)
+
+    $(선택자).hover(
+        // 기능 1번
+        function(){
+            // 마우스가 요소 위에 올라갔을 때 실행할 기능
+        },
+
+        // 기능 2번
+        function(){
+            // 마우스가 요소에서 벗어났을 때 실행할 기능
+        }
+    )
+
+    $(선택자).hover(mouseEnter함수, mouseLeave함수);
+  */
   $(".dropdown").hover(
     function () {
       // 마우스 올렸을 때
       // HINT: #dropdownMenu를 slideDown(200)
+      $("#dropdownMenu").slideDown(200);
     },
     function () {
       // 마우스 벗어났을 때
       // HINT: #dropdownMenu를 slideUp(200)
+      $("#dropdownMenu").slideUp(200);
     }
   );
 });
