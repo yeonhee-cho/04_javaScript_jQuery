@@ -56,7 +56,7 @@ $(document).ready(function () {
 
   $(".tab-btn").click(function () {
     // 여기에 탭 메뉴 코드 작성
-    const targetTab = $(this).data("tab"); // data-tab 속성값
+    const targetTab = $(this).data("tab"); // data-tab 속성값, targetTab에 web, mobile, consulting 넣어준것
     $(".tab-content").slideUp(300);
     $("#" + targetTab).slideDown(300);
     $(".tab-btn").removeClass("active");
