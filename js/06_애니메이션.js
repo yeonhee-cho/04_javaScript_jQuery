@@ -39,4 +39,45 @@ $(function () {
     $(".tab-content").slideUp();
     $("#" + targetTab).slideDown();
   });
+
+  /* 3. 프로그래스바 */
+  $("#startProgress").click(function () {
+    $("#progressBar").animate(
+      {
+        // 클릭이 실행되면 가로 100%로 채우고 2초 후에 무언가를 할 것이다.
+        // 여기서 무언가를 할 것이다와 시간초는 필수가 아님!!
+        width: "100%",
+      },
+      2000, // 2초
+      function () {
+        // 2초 후 실행할 기능
+        // 기존에 progressBar 내부에 %만 작성되어있는 텍스트를 width 100%로 만들고 나면 텍스트를 100%로 교체
+        $("#progressBar").text("100%");
+      }
+    );
+  });
+  // #resetProgress 클릭했을 때
+  // css(속성명 = "width", 속성값 = "0%") 만들기
+  // text("0%")
+  $("#resetProgress").click(function () {
+    $("#progressBar").css("width", "0%").text("0%");
+  });
+
+  /* 4. 3D 카드 플립 효과 */
+  $("#flipCard").click(function () {
+    // HINT: .toggleClass("flipped")를 사용해서 플립 효과
+    $(this).toggleClass("flipped");
+  });
+
+  /* 애니메이션 드롭다운 메뉴 */
+  $(".dropdown").hover(
+    function () {
+      // 마우스 올렸을 때
+      // HINT: #dropdownMenu를 slideDown(200)
+    },
+    function () {
+      // 마우스 벗어났을 때
+      // HINT: #dropdownMenu를 slideUp(200)
+    }
+  );
 });
