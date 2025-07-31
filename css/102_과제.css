@@ -59,8 +59,11 @@ td:first-child {
 th,
 td {
   width: 50%;
-  min-height: 50px;
   padding: 4px 8px;
+}
+th {
+  background-color: #f5f5f5;
+  padding: 8px;
 }
 tr {
   text-align: center;
