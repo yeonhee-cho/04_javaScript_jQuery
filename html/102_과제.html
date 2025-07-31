@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>디즈니 캐릭터 검색</title>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -13,7 +13,40 @@
     <link rel="icon" type="image/png" href="../img/pumkin.png" />
   </head>
   <body>
-    <!-- https://www.freepublicapis.com/disney-api -->
+    <div class="main-banner">
+      <img
+        src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftriple.guide%2Farticles%2Fd32bee01-43ee-49ab-894e-90228e16c502&psig=AOvVaw2ciAa-PDjXySdSj9iReTsc&ust=1754040925483000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIjczOPl5o4DFQAAAAAdAAAAABAE"
+        alt="디즈니성"
+      />
+    </div>
+    <div class="container">
+      <div class="inner-container">
+        <h2 class="main-title">디즈니 캐릭터 소개</h2>
+        <span>디즈니 캐릭터를 소개합니다!</span>
+        <div id="result">
+          <table>
+            <thead>
+              <tr>
+                <th>캐릭터 이미지</th>
+                <th>캐릭터 이름</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img
+                    src="https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg"
+                    alt="이미지"
+                  />
+                </td>
+                <td><p class="character-name">Baloo</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- https://www.freepublicapis.com/disney-api -->
+    </div>
 
     <script src="../js/102_과제.js"></script>
   </body>

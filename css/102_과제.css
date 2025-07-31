@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  background: #f00;
+}
+.main-banner {
+  width: 100%;
+  height: 200px;
+  background: #0f0;
+}
+.inner-container {
+  max-width: 1200px;
+  background: #00f;
+  margin: 0 auto;
+}
+
+.main-title {
+}
+#result {
+}
+#result img {
+}
+.character-name {
+}
