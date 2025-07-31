@@ -10,39 +10,74 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/102_과제.css" />
-    <link rel="icon" type="image/png" href="../img/pumkin.png" />
+    <link rel="icon" type="image/ico" href="../img/favicon.ico" />
   </head>
   <body>
     <div class="main-banner">
       <img
-        src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftriple.guide%2Farticles%2Fd32bee01-43ee-49ab-894e-90228e16c502&psig=AOvVaw2ciAa-PDjXySdSj9iReTsc&ust=1754040925483000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIjczOPl5o4DFQAAAAAdAAAAABAE"
+        src="https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlzbmV5fGVufDB8fDB8fHww"
         alt="디즈니성"
       />
     </div>
     <div class="container">
       <div class="inner-container">
-        <h2 class="main-title">디즈니 캐릭터 소개</h2>
-        <span>디즈니 캐릭터를 소개합니다!</span>
-        <div id="result">
-          <table>
-            <thead>
-              <tr>
-                <th>캐릭터 이미지</th>
-                <th>캐릭터 이름</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <img
-                    src="https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg"
-                    alt="이미지"
-                  />
-                </td>
-                <td><p class="character-name">Baloo</p></td>
-              </tr>
-            </tbody>
-          </table>
+        <h1 class="main-title">디즈니 캐릭터 소개</h1>
+        <p class="sub-tit">
+          다양한 방법으로 소개된 디즈니 캐릭터들을 모아 여러분께 소개합니다!
+        </p>
+
+        <figcaption>* 이미지를 클릭하면 크게 보입니다!</figcaption>
+        <table>
+          <thead>
+            <tr>
+              <th>캐릭터 이미지</th>
+              <th>캐릭터 이름</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="result">
+              <td>
+                <img
+                  src="https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg"
+                  alt="이미지"
+                />
+              </td>
+              <td><p class="character-name">Baloo</p></td>
+            </tr>
+            <tr id="result">
+              <td>
+                <img
+                  src="https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg"
+                  alt="이미지"
+                />
+              </td>
+              <td><p class="character-name">Baloo</p></td>
+            </tr>
+            <tr id="result">
+              <td>
+                <img
+                  src="https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg"
+                  alt="이미지"
+                />
+              </td>
+              <td><p class="character-name">Baloo</p></td>
+            </tr>
+            <tr id="result">
+              <td>
+                <img
+                  src="https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg"
+                  alt="이미지"
+                />
+              </td>
+              <td><p class="character-name">Baloo</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pagination-wrap">
+          <button type="button" id="prev">이전</button>
+          <div class="page-num">1</div>
+          <button type="button" id="next">다음</button>
         </div>
       </div>
       <!-- https://www.freepublicapis.com/disney-api -->
