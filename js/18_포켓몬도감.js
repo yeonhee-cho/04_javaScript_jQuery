@@ -62,8 +62,8 @@ function pokeInfo(page) {
       .done(function (data) {
         $("#pokemonContainer").html(
           $("#pokemonContainer").html() +
-            `<img src="${data.sprites.front_default}">
-            `
+            `<img src="${data.sprites.other["official-artwork"].front_default}" style="width:100px">
+            ` // official-artwork같이 쓰여 있어 자동 띄어쓰기 official - artwork 가 되어 이미지 검색이 어려울 경우 []안에 넣어주어 해결한다!!
         );
       })
       .fail();
