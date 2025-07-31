@@ -62,6 +62,24 @@ function getDogs() {
     2. 각각 다른 강아지 사진 URL 만들기
     3. photo-grid 클래스와 photo-item 클래스 사용
   */
+
+  $.get("https://api.thedogapi.com/v1/images/search?limit=3").done(function (
+    data
+  ) {
+    const threeDogs = data.slice(0, 5);
+    $("#result2").html(
+      threeDogs.map(
+        (dog) => `
+        <div class="photo-grid">
+          <div class="photo-item">
+            <img src="${dog.url}">
+            <p>강아지 url : ${dog.url}</p>
+          </div>
+        </div>
+        `
+      )
+    );
+  });
 }
 
 // 문제 3: 선택한 동물 사진 가져오기
@@ -81,6 +99,24 @@ function getSelectedAnimal() {
   // selected 값이 "cat"이면 고양이 사진 4장
   // selected 값이 "dog"이면 강아지 사진 4장
   // if문을 사용해서 조건에 따라 다른 사진 표시
+
+  $.get(`https://api.the${selected}api.com/v1/images/search?limit=3`).done(
+    function (data) {
+      const count = data.slice(0, 4);
+      $("#result3").html(
+        count.map(
+          (animal) => `
+        <div class="photo-grid">
+          <div class="photo-item">
+            <img src="${animal.url}">
+            <p>${selected == "cat" ? "고양이" : "강아지"} Id : ${animal.id}</p>
+          </div>
+        </div>
+        `
+        )
+      );
+    }
+  );
 }
 
 // 문제 4: 원하는 개수만큼 고양이 사진 가져오기
