@@ -3,6 +3,8 @@ $(function () {
   $("#btn1").click(문제1번기능);
   $("#btn2").click(userInfo);
   $("#btn3").click(getRandom);
+  $("#btn4").click(getComment);
+  $("#btn5").click(errorFn);
 }); // 아이디가 btn1인 버튼을 클릭했을 때 문제1번기능 함수에 담긴 기능 사용
 
 // 1. 기본 텍스트 데이터 가져오기
@@ -69,7 +71,7 @@ function getRandom() {
   // 1. get을 이용해서 데이터 가져올 주소 설정
   // https://api.quotable.io/random
   // http://api.quotable.io/random
-  $.get("https://api.quotable.io/random")
+  $.get("http://api.quotable.io/random")
     .done(function (data) {
       $("#result3").html(`
                   <div class="success">
@@ -87,5 +89,60 @@ function getRandom() {
         </div>
         `
       )
+    );
+}
+
+// 4. 댓글 .length 개를 성공적으로 가져왔다 띄워주기
+// https://jsonplaceholder.typicode.com/posts/1/comments
+
+function getComment() {
+  $.get("http://jsonplaceholder.typicode.com/posts/1/comments")
+    .done(function (data) {
+      console.log(data.id);
+
+      $("#result4").html(`
+                <div class="success">
+                    댓글 ${data.length} 개를 성공적으로 불러왔습니다.<br>
+                    <!-- index 번호를 이용하여 첫 번째 댓글 가져오기 -->
+                    첫 번째 댓글 : ${data[0].body} 
+                </div>
+                `);
+    })
+    .fail(() => {
+      // 데이터 주소 접속 실패했을 경우
+      $("#result4").html(
+        `
+        <div class="error">
+            댓글을 가져오는데 실패했습니다.
+        </div>
+        `
+      );
+    });
+}
+
+// 5. 에러 처리하기
+// https://jsonplaceholder.typicode.com/posts/999999
+function errorFn() {
+  $.get("https://jsonplaceholder.typicode.com/posts/999999")
+    .done(function (data) {
+      console.log(data);
+      $("#result5").html(`
+          <div class="success">
+              데이터를 성공적으로 가져왔습니다.
+          </div>
+        `);
+    })
+    .fail(
+      // 에러가 발생했을 때도 매개변수 파라미터 자리에 data라는 변수이름을 사용해도 되지만
+      // 개발자간의 규칙으로 err나 xhr과 같은 명칭을 사용해주는 것이 바람직함
+      function (xhr) {
+        $("#result5").html(`
+          <div class="error">
+              에러발생! <br>
+              <strong>상태 코드 : </strong> ${xhr.status}<br>
+              <strong>에러 메세지 : </strong> ${xhr.statusText}<br>
+          </div>
+        `);
+      }
     );
 }
