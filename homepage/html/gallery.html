@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>오늘의 명언</title>
+    <title>갤러리</title>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -41,19 +41,22 @@
           </li>
         </ul>
       </div>
-    </nav>
 
-    <div class="container">
-      <!-- 명언 페이지 -->
-      <div id="quote" class="page">
-        <h1>📝 오늘의 명언</h1>
-        <p>버튼을 클릭해서 랜덤한 영어 명언을 가져와보세요!</p>
-        <p>영어 공부와 명언까지 1석 2조!</p>
-        <button id="getQuote">명언 가져오기</button>
-        <div id="quoteResult" class="result"></div>
+      <div class="container">
+        <h1>🖼️ 갤러리</h1>
+
+        <p>귀여운 동물 사진들을 감상하세요</p>
+        <div id="dogResult" class="result"></div>
+
+        <p>귀여운 고양이 사진들을 감상하세요</p>
+        <div style="text-align: center; margin-bottom: 20px">
+          <button type="button" id="prevBtn">이전페이지</button>
+          <span id="pageInfo">페이지 1</span>
+          <button type="button" id="nextBtn">다음페이지</button>
+        </div>
+        <div id="catResult" class="result"></div>
       </div>
-    </div>
-
-    <script src="../js/quote.js"></script>
+    </nav>
+    <script src="../js/gallery.js"></script>
   </body>
 </html>
