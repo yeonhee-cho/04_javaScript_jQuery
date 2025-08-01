@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사용자 정보</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" type="image/png" href="../img/pumkin.png" />
+  </head>
+  <body>
+    <!-- 네비게이션 -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">메인페이지</div>
+        <ul class="nav-menu">
+          <li class="nav-item active">
+            <a href="index.html" class="nav-link" data-page="login">로그인</a>
+          </li>
+          <li class="nav-item">
+            <a href="quote.html" class="nav-link" data-page="quote"
+              >오늘의 명언</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="userinfo.html" class="nav-link" data-page="user"
+              >사용자 정보</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-page="gallery">갤러리</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-page="posts">게시물</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>👤 사용자 정보</h1>
+      <p>사용자 이름을 클릭하면 해당 사용자의 상세정보를 가져옵니다.</p>
+
+      <div class="user-card" id="usersList"></div>
+
+      <div class="result" id="userResult"></div>
+    </div>
+
+    <script src="../js/userinfo.js"></script>
+  </body>
+</html>
