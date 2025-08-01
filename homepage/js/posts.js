@@ -73,3 +73,20 @@ function getPosts() {
     )
   );
 }
+
+// 게시물에 해당하는 댓글 가져오기
+function getComments(postId) {
+  $.get(
+    `https://jsonplaceholder.typicode.com/posts/${postId}/comments?_limit=3`
+  ).done(function (data) {
+    $("#commentsResult").html(
+      data.map(
+        (comment) => `
+        <h4>${comment.name}</h4>
+        <p>${comment.email}</p>
+        <p>${comment.body}</p>
+        `
+      )
+    );
+  });
+}
