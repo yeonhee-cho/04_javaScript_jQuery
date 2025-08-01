@@ -48,6 +48,12 @@ function getCats() {
 
 // 이미지 클릭 시 큰 이미지로 보여주기
 function showFullImg(imageUrl) {
+  /*
+        .prepend() 선택한 요소의 맨 앞에 새로운 요소(태그)를 추가
+        .prepend() = 맨 앞에 새로운 것을 이어서 추가
+        .append() = 맨 뒤에 새로운 것을 교체
+        .html() = 내용 전체 교체
+    */
   $("#catResult").prepend(`
     <div id="fullImgModal" class="cat-modal" onclick="closeFullImg()">
         <img src="${imageUrl}" class="cat-detail-show">

@@ -1,7 +1,7 @@
 $(function () {
   getUsers();
 });
-// 내가 한거
+
 function getUsers() {
   // https://jsonplaceholder.typicode.com/users
   // https://jsonplaceholder.typicode.com/users/${userId}
