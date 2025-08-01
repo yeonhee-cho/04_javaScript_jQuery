@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>오늘의 명언</title>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -13,24 +13,29 @@
     <link rel="icon" type="image/png" href="../img/pumkin.png" />
   </head>
   <body>
+    <!-- 네비게이션 -->
     <nav>
       <div class="nav-container">
         <div class="logo">메인페이지</div>
         <ul class="nav-menu">
           <li class="nav-item active">
-            <a href="index.html" class="nav-link">로그인</a>
+            <a href="index.html" class="nav-link" data-page="login">로그인</a>
           </li>
           <li class="nav-item">
-            <a href="quote.html" class="nav-link">오늘의 명언</a>
+            <a href="quote.html" class="nav-link" data-page="quote"
+              >오늘의 명언</a
+            >
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">유저 정보</a>
+            <a href="userinfo.html" class="nav-link" data-page="user"
+              >사용자 정보</a
+            >
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">갤러리</a>
+            <a href="#" class="nav-link" data-page="gallery">갤러리</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">게시물</a>
+            <a href="#" class="nav-link" data-page="posts">게시물</a>
           </li>
         </ul>
       </div>
