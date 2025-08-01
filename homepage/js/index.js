@@ -8,14 +8,16 @@ $(function () {
   $("#loginBtn").click(logoutCheck);
 
   // 로그인 버튼이 html에 존재하지 않는다는 가정
-  //   let isLoggedIn = false;
+  /*
+  let isLoggedIn = false;
 
-  //   $("#loginBtn").click(function () {
-  //     if (isLoggedIn) {
-  //       loginCheck();
-  //     } else {
-  //     }
-  //   });
+  $("#loginBtn").click(function () {
+    if (isLoggedIn) {
+      loginCheck();
+    } else {
+    }
+  });
+  */
 });
 
 function loginCheck() {
@@ -33,27 +35,30 @@ function loginCheck() {
 
   $("#loginResult").html(`<div class="loading">로그인 중입니다...</div>`);
 
-  if (
-    (username === "admin" && password === "1234") ||
-    (username === "user" && password === "1234")
-  ) {
-    $(".form-group").hide();
-    $("#logInBtn").show();
-    $("#logoutBtn").show(); // TODO
+  // $.get 이용해서 json에 해당하는 username 과 password가 일치하는지 확인
+  $.get("../json/userInfo.json")
+    // function (data) {} 익명함수를 idPwCheck 함수 이름으로 변경 후 done 내부에서 idPwCheck 함수 호출하여 사용 하지만 data사용시 그냥 적어주는게 좋음
+    .done(function (data) {
+      if (data.users[username] && data.users[username].password === password) {
+        $(".form-group").hide();
+        $("#logInBtn").hide();
+        $("#logoutBtn").show();
 
-    $("#loginResult").html(
-      `
-    <div class="success">
-        <p><strong>로그인 성공!</strong></p>
-        <p>${username}님, 환영합니다.</p>
-    </div>
-    `
-    );
-  } else {
-    $("#loginResult").html(`
-        <div class="error">아이디 또는 비밀번호가 일치하지 않습니다.</div>
-        `);
-  }
+        $("#loginResult").html(
+          `
+          <div class="success">
+              <p><strong>로그인 성공!</strong></p>
+              <p>${username}님, 환영합니다.</p>
+          </div>
+          `
+        );
+      } else {
+        $("#loginResult").html(`
+              <div class="error">아이디 또는 비밀번호가 일치하지 않습니다.</div>
+              `);
+      }
+    })
+    .fail();
 }
 
 // 1.form-group 숨김처리 loginBtn -> 로그아웃 버튼으로 변경
