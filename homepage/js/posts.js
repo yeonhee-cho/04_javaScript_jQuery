@@ -8,7 +8,7 @@ let 현재페이지 = 1;
 let 전체게시물 = [];
 console.log("전체게시물 (데이터 저장 전) : ", 전체게시물);
 
-const 페이지당게시물수 = 10; //한 페이지당 10개
+const 페이지당게시물수 = 3; //한 페이지당 10개
 
 $(function () {
   // 1. posts를 클릭하지 않고 가져오기
@@ -82,9 +82,8 @@ function getComments(postId) {
     $("#commentsResult").html(
       data.map(
         (comment) => `
-        <h4>${comment.name}</h4>
-        <p>${comment.email}</p>
-        <p>${comment.body}</p>
+        <h4>${comment.name} (<span class="comment-email">${comment.email}</span>)</h4>
+        <p class="comment-body">${comment.body}</p>
         `
       )
     );
