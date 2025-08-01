@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>error 확인 페이지</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+  </head>
+  <body>
+    <!-- 네비게이션 -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">홈페이지</a>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link" data-page="login">로그인</a>
+          </li>
+          <li class="nav-item">
+            <a href="quote.html" class="nav-link" data-page="quote"
+              >오늘의 명언</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="userinfo.html" class="nav-link" data-page="user"
+              >사용자 정보</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="gallery.html" class="nav-link" data-page="gallery"
+              >갤러리</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="posts.html" class="nav-link" data-page="posts">게시물</a>
+          </li>
+          <li class="nav-item">
+            <a href="error.html" class="nav-link" data-page="error">에러</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>⚠️ 에러 테스트</h1>
+      <p>다양한 HTTP 에러 상황을 테스트해보세요!</p>
+      <select id="errorSelect">
+        <option value="">에러 타입을 선택하세요.</option>
+        <option value="404">404</option>
+        <option value="403">403</option>
+        <option value="500">500</option>
+        <option value="timeOut">timeOut</option>
+        <option value="netWork">netWork</option>
+      </select>
+      <button type="button" id="error.js">에러 확인하기</button>
+      <div id="errorResult" class="result"></div>
+    </div>
+
+    <script src="../js/error.js"></script>
+  </body>
+</html>
