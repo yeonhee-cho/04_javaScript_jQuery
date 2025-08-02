@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인페이지</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+  </head>
+  <body>
+    <!-- 네비게이션 -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">홈페이지</a>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link" data-page="login">로그인</a>
+          </li>
+          <li class="nav-item">
+            <a href="quote.html" class="nav-link" data-page="quote"
+              >오늘의 명언</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="userinfo.html" class="nav-link" data-page="user"
+              >사용자 정보</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="gallery.html" class="nav-link" data-page="gallery"
+              >갤러리</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="posts.html" class="nav-link" data-page="posts">게시물</a>
+          </li>
+          <li class="nav-item">
+            <a href="error.html" class="nav-link" data-page="error">에러</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- 로그인 페이지 -->
+      <div id="login" class="page active">
+        <h1>🔐 로그인</h1>
+        <div class="login-form">
+          <div class="form-group">
+            <label for="username">아이디:</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="아이디를 입력하세요"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">비밀번호:</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호를 입력하세요"
+            />
+          </div>
+          <button id="loginBtn">로그인</button>
+          <button id="logoutBtn" style="display: none">로그아웃</button>
+          <div id="loginResult" class="result"></div>
+          <div class="welcome-text">
+            <p>테스트 계정: admin / 1234</p>
+            <p>사용자 계정: user / 1234</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/index.js"></script>
+  </body>
+</html>
