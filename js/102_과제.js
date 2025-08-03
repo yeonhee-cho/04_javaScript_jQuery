@@ -53,9 +53,11 @@ function getPosts() {
         .map((post) => {
           const imageCell = post.imageUrl
             ? `<img src="${post.imageUrl}" 
-            alt="${post.name}"  
-            onclick="openModal('${post.imageUrl}', '${post.name}')"
-            />` // TODO 이미지 이름에 있는 " ' " 특수문자 오류 잡기
+                alt="${post.name}"  
+                data-name="${encodeURIComponent(post.name)}" 
+                data-url="${post.imageUrl}"
+                id="characterImg"
+                />` /* encodeURIComponent 특수문자 처리 */
             : `<span class="no-image">해당되는 이미지가 없습니다.</span>`;
 
           return ` 
@@ -71,6 +73,13 @@ function getPosts() {
     );
   }, 200);
 }
+
+// 이미지 이름에 있는 " ' " 특수문자 오류 잡기
+$(document).on("click", "#characterImg", function () {
+  const imageUrl = $(this).data("url");
+  const name = decodeURIComponent($(this).data("name")); // decodeURIComponent 인코딩 처리
+  openModal(imageUrl, name);
+});
 
 // 이미지 클릭 시 모달창 띄우기
 function openModal(imageUrl, name) {
