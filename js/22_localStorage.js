@@ -69,6 +69,19 @@ function signUp(e) {
   localStorage.setItem("userPw", userPw);
 
   // 모두 저장하고 나서 결과 페이지로 이동
+  // window = 내장객체, 자바스크립트에서 모든 객체의 최상위 부모
+  // window 내부에 document와 location, history와 같은 객체 존재
+  // window.document, window.alert
+
+  // window 내 컴퓨터에서 . 주소가. 링크로 되어있는 = 로 이동
+  /*
+    window = 실질적으로 자바스크립트 내의 모든 ~~~ 예약어를 지닌 존재
+    window.alert window.document로 사용하는 것이 맞으나 사용 빈도가 높은 경우 window. 생략 // TODO
+
+    location = 현재 페이지의 url 정보를 담은 객체
+    location.reload() = 페이지 새로고침
+    location.href =  현재 페이지에서 ~~로 이동
+  */
   window.location.href = "22_result.html";
 }
 
