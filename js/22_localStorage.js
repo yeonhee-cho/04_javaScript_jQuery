@@ -27,13 +27,14 @@ function signUp(e) {
     localStorage에 목록 리스트 형태로 저장
   */
   // 기존 회원 목록 가져오기(없으면 빈 배열 형태) 가져온 값을 userList 변수에 담아두기
-  let userList = JSON.parse(localStorage.getItem("userList") || []);
+  let userList = JSON.parse(localStorage.getItem("userList") || "[]");
 
   // 새 회원 정보를 담을 json 형태의 배열 생성
   const newUser = {
     username: username,
     password: userPw,
   };
+
   // 빈 배열이나 기존 배열에 새로운 유저 정보를 추가
   userList.push(newUser);
 
