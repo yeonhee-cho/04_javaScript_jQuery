@@ -1,3 +1,4 @@
+<!-- https://www.freepublicapis.com/disney-api -->
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -9,15 +10,17 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/2b1cc8e2c0.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="../css/102_과제.css" />
     <link rel="icon" type="image/png" href="../img/logo.png" />
   </head>
   <body>
     <div class="main-banner">
-      <img
-        src="https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlzbmV5fGVufDB8fDB8fHww"
-        alt="디즈니성"
-      />
+      <!-- https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlzbmV5fGVufDB8fDB8fHww -->
+      <img src="../img/main-banner.png" alt="디즈니성" />
     </div>
     <div class="container">
       <div class="inner-container">
@@ -27,60 +30,42 @@
         </p>
 
         <figcaption>* 이미지를 클릭하면 크게 보입니다!</figcaption>
-        <table>
-          <thead>
-            <tr>
-              <th>캐릭터 이미지</th>
-              <th>캐릭터 이름</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr id="result">
-              <td>
-                <img
-                  src="https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg"
-                  alt="이미지"
-                />
-              </td>
-              <td><p class="character-name">Baloo</p></td>
-            </tr>
-            <tr id="result">
-              <td>
-                <img
-                  src="https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg"
-                  alt="이미지"
-                />
-              </td>
-              <td><p class="character-name">Baloo</p></td>
-            </tr>
-            <tr id="result">
-              <td>
-                <img
-                  src="https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg"
-                  alt="이미지"
-                />
-              </td>
-              <td><p class="character-name">Baloo</p></td>
-            </tr>
-            <tr id="result">
-              <td>
-                <img
-                  src="https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg"
-                  alt="이미지"
-                />
-              </td>
-              <td><p class="character-name">Baloo</p></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>캐릭터 이미지</th>
+                <th>캐릭터 이름</th>
+              </tr>
+            </thead>
+            <tbody id="result">
+              <tr>
+                <td colspan="2" class="loading-td">
+                  캐릭터 정보를 불러오는 중입니다...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="modalOverlay" class="modal-overlay" style="display: none">
+          <div class="modal-content">
+            <button class="close-btn" id="closeModal">✕</button>
+            <h3>이미지 상세</h3>
+            <div id="imgDetail"></div>
+          </div>
+        </div>
 
         <div class="pagination-wrap">
-          <button type="button" id="prev">이전</button>
-          <div class="page-num">1</div>
-          <button type="button" id="next">다음</button>
+          <button type="button" id="prevBtn" class="btn">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div id="pageNum" class="page-num">1</div>
+          <button type="button" id="nextBtn" class="btn">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
       </div>
-      <!-- https://www.freepublicapis.com/disney-api -->
     </div>
 
     <script src="../js/102_과제.js"></script>
