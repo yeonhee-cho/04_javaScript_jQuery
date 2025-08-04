@@ -49,12 +49,12 @@ function deleteProducts(e) {
   // 사용자에게 정말 삭제할 것인지 최종 확인
   // alert 오직 확인, prompt 입력창과 확인 버튼, confirm 확인 취소 버튼 확인 true 취소 false
   /*
-  let cf = confirm("정말모든 제품을 삭제하시겠습니까?")
+  let cf = confirm("정말 모든 제품을 삭제하시겠습니까?")
   if(cf){
   }
   */
 
-  if (confirm("정말모든 제품을 삭제하시겠습니까?")) {
+  if (confirm("정말 모든 제품을 삭제하시겠습니까?")) {
     // confirm 에서 확인을 눌렀을 경우
     // localStorage에 productList에서 데이터만 제거
     localStorage.removeItem("productList");
