@@ -1,5 +1,7 @@
 $(function () {
   showUsers();
+
+  $("#clearAll").click(removeAllUsers);
 });
 
 function showUsers() {
@@ -22,6 +24,15 @@ function showUsers() {
   // 기존 회원 목록 가져오기(없으면 빈 배열 형태) 가져온 값을 userList 변수에 담아두기
   let userList = JSON.parse(localStorage.getItem("userList") || "[]");
 
+  if (userList.length === 0) {
+    $("#userList").html(
+      `
+      <div class="no-users">등록된 회원이 없습니다.</div>
+      `
+    );
+    return;
+  }
+
   // 사용자 총 회원 수 표시 users.length
   // 사용자가 없으면 (users.length === 0) no-user 보이게!
   // map 사용해서 HTML로 소비자가 유저 리스트 목록을 확인할 수 있도록 설정
@@ -35,4 +46,15 @@ function showUsers() {
   );
 
   $("#userList").html(userHTML);
+}
+
+function removeAllUsers(e) {
+  e.preventDefault();
+
+  if (confirm("모든 회원을 삭제하시겠습니까?")) {
+    localStorage.removeItem("userList");
+
+    alert("모든 회원이 삭제되었습니다.");
+    location.reload(); // 페이지를 새로고침해서 목록을 갱신
+  }
 }
