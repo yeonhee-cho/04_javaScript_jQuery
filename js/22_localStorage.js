@@ -1,5 +1,5 @@
 $(function () {
-  $("a").click(signup);
+  $("a").click(signUp);
 });
 
 function signUp(e) {
@@ -7,8 +7,8 @@ function signUp(e) {
   // 제출하기 일시정지 상태로 아래 정규식, 데이터 저장 여부등과 같은 규정을 모두 확인한 후 result.html으로 이동할 수 있도록 설정
 
   // 입력값 가져오기
-  const username = $("username").val();
-  const userPw = $("userPw").val();
+  const username = $("#username").val();
+  const userPw = $("#userPw").val();
 
   // 서버로 전송할 데이터
   // userData 형식 -> 추후 DB에 저장할 때 사용
