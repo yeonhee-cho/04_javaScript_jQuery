@@ -76,7 +76,7 @@ function signUp(e) {
   // window 내 컴퓨터에서 . 주소가. 링크로 되어있는 = 로 이동
   /*
     window = 실질적으로 자바스크립트 내의 모든 ~~~ 예약어를 지닌 존재
-    window.alert window.document로 사용하는 것이 맞으나 사용 빈도가 높은 경우 window. 생략 // TODO
+    window.alert window.document로 사용하는 것이 맞으나 사용 빈도가 높은 경우 window. 생략 
 
     location = 현재 페이지의 url 정보를 담은 객체
     location.reload() = 페이지 새로고침
