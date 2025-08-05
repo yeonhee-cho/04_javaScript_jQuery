@@ -49,3 +49,22 @@ $(function () {
     window.close();
   });
 });
+
+/*
+  open : 열다 / 무언가를 여는 행위
+  메인 html에서 
+    window.open("팝업창.html")
+  메인 html에서 팝업창 html을 열어준다.
+
+
+  opener : 열어준 것 / 개방자 / 오픈, 주최한 자
+  팝업창 html을 열어준 메인 html을 의미
+
+  opener.document.querySelector("선택자")
+  나를열어준메인html.문서에서.선택자에해당하는 태그
+
+  opener.document.querySelector("#inputEmail").value = document.querySelector("#childEmail").value
+  나를열어준signup.html에서아이디가inputEmail해당하는값에 ↑ 현재emailCheck.html에서childEmail내에작성한값을
+                                                       |
+                                                value로 전달하겠다
+*/
