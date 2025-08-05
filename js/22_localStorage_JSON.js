@@ -51,9 +51,35 @@ function searchData(e) {
 /* 모든 데이터 보기 */
 function showAllData(e) {
   e.preventDefault();
+  // 로컬스토리지에서 저장된 유저 목록 가져오기
+  let userList = JSON.parse(localStorage.getItem("userList") || "[]");
+  console.log("유저 목록 : ", userList);
+
+  let html = `
+  <h3> 저장된 사용자 목록(총 ${userList.length}명) </h3>
+  `;
+
+  // for문을 사용하되, userList 값을 모두 [i]로 가져올 것!
+  for (let i = 0; i < userList.length; i++) {
+    html = `
+        ${userList[i].name} 님<br>
+        ${userList[i].age} 세<br>
+        ${userList[i].email}<br>
+        가입일자 : ${userList[i].createAt}<br>
+    `;
+  }
+  $("#allData").html(html);
 }
 
 /* 모든 데이터 삭제 */
 function clearAllData(e) {
   e.preventDefault();
+
+  // 정말로 모든 사용자를 삭제하시겠습니까 물어본 후 userList 를 [] 만들기
+  if (confirm("정말로 모든 사용자를 삭제하시겠습니까?")) {
+    // localStorage.removeItem("userList"); => 로컬스토리지 내에서 특정 키만 삭제
+    // localStorage.clear(); =>  로컬스토리지 내부에 존재하는 모든 데이터 삭제
+    localStorage.removeItem("userList");
+    alert("모든 데이터가 삭제되었습니다.");
+  }
 }
