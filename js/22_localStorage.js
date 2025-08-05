@@ -1,6 +1,8 @@
 $(function () {
   $("#saveData").click(saveDataFn);
   $("#getBtn").click(getDataFn);
+  $("#showAllBtn").click(showAllDataFn);
+  $("#cleatAllBtn").click(cleatAllDataFn);
 });
 
 // 크롬이나 엣지 등 브라우저에서 F12 클릭
@@ -16,6 +18,8 @@ $(function () {
 // localStorage 내부에서는 문자열만 저장 = 인터넷 주소 즐겨찾기 나 간단한 읽는 정도의 데이터를 저장하므오
 // 소비자가 인터넷을 사용함에 있어 불편을 느끼지 않을 최소한의 저장 자료형을 사용!
 // 악성 코드 방지 = 문자열만 가능하고 배열 또한 문자열로 저장 ""
+
+/* 저장하기 */
 function saveDataFn(e) {
   // button type = submit 이거나 a 태그로 클릭할 경우 제출 방지 사용
   // a 태그 속성 기본값 href 로 들어가는 것을 방지 (예 : 마이페이지 , 임직원페이지 접근 가능한 유저인가?)
@@ -31,6 +35,7 @@ function saveDataFn(e) {
   localStorage.setItem(inputKey, inputValue); // 기본적으로 문자열
 }
 
+/* 가져오기 */
 function getDataFn(e) {
   e.preventDefault();
   const getKey = $("#getKey").val();
@@ -49,4 +54,39 @@ function getDataFn(e) {
     저장된 키 내부에 존재하는 값 : ${getValue}<br>
     `
   );
+}
+
+// 키의 이름을 가져올 때는 index 번호를 활용해서 0번째에 존재하는 key 명칭을 가져온가.
+// 가지고 온 키의 명칭을 활용해서 값을 가져올 수 있다.
+// getkey = index 번호
+// getvalue = key 의 명칭
+
+// set 저장할 때는 순차적으로 0번 부터 저장
+
+// for 문 보다 로컬스토리지에 리스트 목록을 저장하는 것이 메모리에 활용적
+// 로컬스토리지에 데이터를 저장할 때 배열, 리스트 형태로 저장
+/* 모든 데이터 보기 */
+function showAllDataFn(e) {
+  e.preventDefault();
+
+  let html = `<h3>크롬 브라우저에 저장된 데이터들 확인</h3><ul>`;
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    html += `<li>
+        <strong>${key}</strong>:${localStorage.getItem(key)}
+    </li>`;
+  }
+
+  html += `</ul>`;
+
+  $("#allData").html(html);
+}
+
+/* 모든 데이터 삭제 */
+function cleatAllDataFn(e) {
+  e.preventDefault();
+
+  if (confirm("모든 데이터를 삭제하시겠습니까?")) {
+    localStorage.clear();
+  }
 }
