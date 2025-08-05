@@ -13,6 +13,9 @@ function closePopup() {
 /* 로그인 */
 function login(e) {
   e.preventDefault();
+
+  const username = $("#username").val().trim();
+  const password = $("#password").val().trim();
 }
 
 /* 회원가입 */
