@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>localStorage 개요</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/22_localStorage.css" />
+    <link rel="icon" type="image/png" href="../img/pumkin.png" />
+  </head>
+  <body>
+    <h1>local Storage 동작 원리</h1>
+    <div class="container">
+      <h2>1️⃣ 데이터 저장하기</h2>
+      <input type="text" id="key" placeholder="저장할 이름(예: 내이름)" />
+      <input type="text" id="value" placeholder="저장할 값(예: 홍길동)" />
+      <button type="button" id="saveData">저장하기</button>
+
+      <div id="saveResult" class="result"></div>
+    </div>
+    <div class="container">
+      <h2>2️⃣ 데이터 가져오기</h2>
+      <input type="text" id="getKey" placeholder="가져올 이름" />
+      <button id="getBtn">가져오기</button>
+      <div id="getResult" class="result"></div>
+    </div>
+    <div class="container">
+      <h2>3️⃣ 현재 저장된 모든 데이터</h2>
+    </div>
+    <script src="../js/22_localStorage.js"></script>
+  </body>
+</html>
