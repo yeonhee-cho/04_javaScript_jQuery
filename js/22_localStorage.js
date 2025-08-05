@@ -2,7 +2,7 @@ $(function () {
   $("#saveData").click(saveDataFn);
   $("#getBtn").click(getDataFn);
   $("#showAllBtn").click(showAllDataFn);
-  $("#cleatAllBtn").click(cleatAllDataFn);
+  $("#clearAllBtn").click(clearAllDataFn);
 });
 
 // 크롬이나 엣지 등 브라우저에서 F12 클릭
@@ -83,7 +83,7 @@ function showAllDataFn(e) {
 }
 
 /* 모든 데이터 삭제 */
-function cleatAllDataFn(e) {
+function clearAllDataFn(e) {
   e.preventDefault();
 
   if (confirm("모든 데이터를 삭제하시겠습니까?")) {

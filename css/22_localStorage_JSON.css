@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f8ff;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+input,
+button,
+select {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #4caf50;
+  border-radius: 5px;
+  font-size: 16px;
+}
+button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #45a049;
+}
+.delete-btn {
+  background-color: #f44336 !important;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.delete-btn:hover {
+  background-color: #da190b !important;
+}
+.result {
+  background-color: #e8f5e8;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border-left: 4px solid #4caf50;
+}
+.storage-view {
+  background-color: #fff3cd;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #ffc107;
+}
+.step {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border-left: 4px solid #007bff;
+}
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin: 5px 0;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border-left: 3px solid #007bff;
+}
+.json-display {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  margin: 10px 0;
+  overflow-x: auto;
+}
+
+#clearAllBtn {
+  background-color: #f44336;
+  border: 1px solid #f44336;
+}
