@@ -22,9 +22,32 @@ $(function () {
   $("#signupForm").submit(function (e) {
     e.preventDefault();
 
-    // TODO:
     // - 입력값 가져오기
+    // 이메일 확인
+    const email = $("#inputEmail").val();
+    if (!email) {
+      alert("이메일 중복확인을 먼저 해주세요.");
+      return;
+    }
+
+    // 전화번호 확인
+    const phone = $("#phone").val();
+    if (!phone) {
+      alert("전화번호를 입력해주세요.");
+      return;
+    }
+
     // - localStorage에 저장
+    let users = JSON.parse(localStorage.getItem("users") || "[]");
+    const newUser = {
+      email: email,
+      phone: phone,
+    };
+
+    users.push(users);
+    localStorage.setItem("users", JSON.stringify(users));
+
     // - 성공 메시지 표시
+    alert("회원가입 성공!", username, password);
   });
 });

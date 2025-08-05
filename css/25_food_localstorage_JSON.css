@@ -88,7 +88,7 @@ button:hover {
   border-radius: 5px;
   margin-top: 10px;
   border-left: 4px solid #4caf50;
-  display: none;
+  /* display: none; */
 }
 
 .storage-view {

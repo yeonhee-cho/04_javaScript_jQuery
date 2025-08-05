@@ -6,10 +6,21 @@ $(function () {
     // - localStorage에서 users 가져오기
     // - 중복 확인
     let userList = JSON.parse(localStorage.getItem("users") || "[]");
-    const isDup = userList.filter((u) => u.email === email);
 
-    // filter는 배열로 데이터를 가져오기 때문에 .length로 값이 한 개라도 존재하는가 //TODO
-    if (isDup.length > 0) {
+    /*
+     .includes() : 문자열이나 배열에서 특정 값이 포함되어 있는지 확인하는 메서드
+                  filter보다 더 많이 검색에서 사용
+     .filter() : 조건에 맞는 모든 요소를 배열로 반환 결과가 목록, 배열 검색/수정 할 때 많이 사용
+                 filter는 배열로 데이터를 가져오기 때문에 .length로 값이 한 개라도 존재하는가 비교해야함
+
+     .some() : 조건에 맞는 요소가 하나라도 있으면 true 결과가 BOOLEAN
+
+     .find() : 조건에 맞는 첫 번째 요소만 반환
+    */
+    const isDup = userList.some((u) => u.email === email);
+
+    // if (isDup.length > 0) { filter를 사용할 때는 length와 비교 필요
+    if (isDup) {
       $("#result").html(
         `<span style="color:red;">이미 사용 중인 이메일입니다.</span>`
       );
