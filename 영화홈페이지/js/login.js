@@ -11,11 +11,13 @@ function closePopup() {
 }
 
 /* 로그인 */
-function login(e) {}
+function login(e) {
+  e.preventDefault();
+}
 
 /* 회원가입 */
 function goToSignup() {
   closePopup();
   // 이전 창에서 열리게 -> window 대신 opener
-  opener.location.href = "register.html";
+  //   opener.location.href = "register.html";
 }
