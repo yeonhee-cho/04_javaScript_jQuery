@@ -9,6 +9,7 @@ function loadMovies() {
   $.get("https://ghibliapi.vercel.app/films")
     .done(function (data) {
       //.loading .hide()
+      $(".loading").hide();
       displayMovies(data);
     })
     .fail(function () {
@@ -45,7 +46,6 @@ function displayMovies(movies) {
       )
       .join("");
     // description.substring(0, 50) 글자 수 줄이기
-    $(".loading").hide();
     $(".movies").html(movieCard);
   }
 }

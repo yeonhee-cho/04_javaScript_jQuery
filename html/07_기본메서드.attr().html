@@ -50,7 +50,7 @@
       <button id="getData">data-id 가져오기</button>
     </div>
     <div class="container attrDiv">
-      <h1>.attr() 메서드</h1>
+      <h1>jQuery .attr()</h1>
       <pre>
 HTML 요소의 속성(attribute)을 조작하는 메서드(기능 = 함수 = 행동)
 주로 &lt;a&gt; 나 &lt;img&gt; 에 많이 사용하나 모든 태그 사용 가능
@@ -63,6 +63,23 @@ $("선택자").attr('속성명','값');
 
 3. 여러 속성 동시 설정
 $("선택자").attr('속성명1','값1').attr('속성명2','값2');
+      </pre>
+      <h2>기본 자바스크립트 attr 속성</h2>
+      <pre>
+1. 속성값 가져오기 .getAttribute();
+document.querySelector("선택자").getAttribute('속성명');
+
+
+2. 속성 값 설정하기 .setAttribute();
+document.querySelector("선택자").setAttribute('속성명','값');
+
+3. 여러 속성 동시 설정
+document.querySelector("선택자").setAttribute('속성명1','값1').setAttribute('속성명2','값2');
+
+4. 속성 제거
+document.querySelector("선택자").removeAttribute('속성명','값');
+document.querySelector("선택자").removeAttribute('속성명');
+
       </pre>
     </div>
     <script src="../js/07_기본메서드.attr().js"></script>
