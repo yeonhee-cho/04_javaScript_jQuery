@@ -32,6 +32,18 @@ function loadMovieDetail(전달받은id확인) {
 
 function 무비상세보기(movie) {
   $("#movieDetail").show();
+  /*
+    .attr() : HTML요소의 속성을 조작하는 기능(메서드)
+
+    // 속성값 가져오기
+    $('선택자').attr('속성명')
+
+    // 속성 값 설정하기
+    $('선택자').attr('속성명','값')
+
+    // 여러 속성 동시에 사용
+    $('선택자').attr('속성명','값1').attr("속성명2",'값2')
+  */
   $("#moviePoster").attr("src", movie.image);
   $("#movieTitle").text(movie.title);
   $("#movieYear").text(movie.release_date + "년");
