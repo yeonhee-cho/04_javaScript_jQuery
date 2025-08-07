@@ -34,16 +34,16 @@ function searchFn() {
     result = allBooks.filter(
       (book) => book.title.includes(keyword) || book.author.includes(keyword)
     );
-    displayResult(result, keyword);
+    displayResults(result, keyword);
   }
 }
 
 // 검색 결과 보여주기
-function displayResult(result, keyword) {
-  const results = $("#result");
+function displayResults(result, keyword) {
+  const 검색결과들 = $("#result");
 
   if (result.length === 0) {
-    result.html(`<div class="no-result"> 검색 결과가 없습니다.</div>`);
+    검색결과들.html(`<div class="no-result"> 검색 결과가 없습니다.</div>`);
     return; // 아래 기능들 실행 못하도록 돌려보내기
   }
 
@@ -53,6 +53,7 @@ function displayResult(result, keyword) {
     let author = book.author;
 
     if (keyword) {
+      console.log("?", title, author);
       title = book.title.replace(
         new RegExp(keyword, "gi"),
         `<span class="highlight">${keyword}</span>`
@@ -61,16 +62,15 @@ function displayResult(result, keyword) {
         new RegExp(keyword, "gi"),
         `<span class="highlight">${keyword}</span>`
       );
-
-      return `
-      <div class="book-item">
-        <div class="book-title">${title}</div>
-        <div class="book-author">${author}</div>
-        <div class="book-price">${book.price.toLocaleString()}원</div>
-      </div>`;
     }
-    result.html(bookHTMLS.join(""));
+    return `
+          <div class="book-item">
+          <div class="book-title">${title}</div>
+          <div class="book-author">${author}</div>
+          <div class="book-price">${book.price.toLocaleString()}원</div>
+          </div>`;
   });
+  검색결과들.html(bookHTMLS.join(""));
 }
 /*
     allBooks.filter((book) => book.title.includes(keyword) || book.author.includes(keyword));
